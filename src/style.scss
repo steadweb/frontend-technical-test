@@ -1,5 +1,41 @@
-$bg-colour: #ccc;
+$bg-colour: white;
+$border-color: #c1c1c1;
+$global-padding: 10px;
+$global-font: 'Roboto', sans-serif;
 
 body {
 	background-color: $bg-colour;
+	font-family: $global-font;
+}
+
+.c-vehicle-list {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-column-gap: $global-padding;
+	grid-row-gap: $global-padding;
+
+	.c-vehicle {
+		border: 1px solid $border-color;
+		padding: $global-padding;
+
+		&__title {
+			text-transform: uppercase;
+		}
+
+		&__image {
+			width: 100%;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	@media screen and (min-width: 1080px) and (max-width: 1199px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media screen and (min-width: 640px) and (max-width: 1079px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
